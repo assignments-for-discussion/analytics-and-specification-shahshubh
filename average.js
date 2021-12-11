@@ -1,14 +1,7 @@
 
 function average(numbers) {
-  var sum = 0;
-  var count = 0;
-  for (var i = 0; i < numbers.length; i++) {
-    if (!isNaN(numbers[i])) {
-      sum += numbers[i];
-      count++;
-    }
-  }
-  return sum / count;
+  const filteredNumbers = numbers.filter((number) => !isNaN(number));
+  return filteredNumbers.reduce((p, c)=> p + c, 0) / filteredNumbers.length;
 }
 
 module.exports = {average};
